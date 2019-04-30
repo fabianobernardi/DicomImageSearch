@@ -1,13 +1,13 @@
 {
   "StudyInfo": {
-    "Modality": ["US"],
+    "Modality": ["CR"],
     "StudyDates": {
       "StartDate": "20090101",
       "EndDate": "20190101"
     }
   },
   "Folders": {
-    "source": "/home/bernardi/Arquivos/Projetos/DicomImageSearch/imagens",
-    "destination": "/home/bernardi/Arquivos/Projetos/DicomImageSearch/imagens-movidas"
+    "source": "D:\\Imagens\\MG_pixelpadding",
+    "destination": "D:\\Imagens\\AAAmovidas"
   }
 }

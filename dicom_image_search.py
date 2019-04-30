@@ -1,4 +1,3 @@
-
 # coding: utf-8
 # Autor: Fabiano Bernardi
 
@@ -97,6 +96,7 @@ def count_files(root_folder):
     :param root_folder:
     :return:
     """
+    print('Contagem de arquivos ... Aguarde')
     file_counter = 0
     for root, dirs, files in os.walk(root_folder):
         for _ in files:
@@ -162,7 +162,7 @@ def retrieve_file(folder_path):
 
 
 def print_progress_bar(iteration, total, prefix='', suffix='', decimals=1,
-                       length=100, fill='█'):
+                       length=50, fill='█'):
     """
     Call in a loop to create terminal progress bar
     @params:
@@ -182,7 +182,7 @@ def print_progress_bar(iteration, total, prefix='', suffix='', decimals=1,
     )
     filled_length = int(length * iteration // total)
     bar = fill * filled_length + '-' * (length - filled_length)
-    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end='\r')
+    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end='')
     # Print New Line on Complete
     if iteration == total:
         print()
@@ -193,6 +193,10 @@ def get_dicom_file(dicom_file):
         file = pydicom.read_file(dicom_file)
         return file
     except dicomerror.InvalidDicomError:
+        pass
+    except PermissionError:
+        pass
+    except:
         pass
 
 
